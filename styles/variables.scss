@@ -15,14 +15,24 @@ $semibold: 600;
 $extrabold: 800;
 
 // spacing
-$XS-spacing: 4px;
-$S-spacing: 8px;
-$M-spacing: 16px;
-$L-spacing: 32px;
-$XL-spacing: 48px;
-$XXL-spacing: 64px;
+$space-unit: 1em;
+$XXS-spacing: calc(0.25 * $space-unit);
+$XS-spacing: calc(0.5 * $space-unit);
+$S-spacing: calc(0.75 * $space-unit);
+$SM-spacing: calc(1.25 * $space-unit);
+$MD-spacing: calc(2 * $space-unit);
+$LG-spacing: calc(3.25 * $space-unit);
+$XL-spacing: calc(5.25 * $space-unit);
 
 // navbar
 $nav-height: 5em;
 
-//shadows
+//transitions
+$transition-primary: 0.1s 0.1s ease-in-out;
+$transition-secondary: 0.2s 0.2s ease-in-out;
+
+//z-index
+$z-index001: 10;
+$z-index002: 20;
+$z-index003: 30;
+$z-index004: 40;

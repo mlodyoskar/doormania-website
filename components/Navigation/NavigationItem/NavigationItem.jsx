@@ -1,11 +1,11 @@
 import styles from './NavigationItem.module.scss'
 import Link from 'next/link'
 
-const NavigationItem = ({ children, link, closeNavbar }) => {
+const NavigationItem = ({ path, text, closeNavbar }) => {
   return (
     <li onClick={closeNavbar} className={styles.menuListItem}>
-      <Link href={link}>
-        <a>{children}</a>
+      <Link href={path}>
+        <a>{text}</a>
       </Link>
     </li>
   )

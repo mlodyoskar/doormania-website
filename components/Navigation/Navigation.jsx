@@ -9,6 +9,13 @@ const Navigation = () => {
 
   const closeNavbar = () => setIsOpen(false)
 
+  const navigationItems = [
+    { path: '/', text: 'Strona główna' },
+    { path: '/oferta', text: 'Oferta' },
+    { path: '/o-nas', text: 'O nas' },
+    { path: 'kontakt', text: 'Kontakt' },
+  ]
+
   return (
     <nav className={styles.navigation}>
       <h1>Doormania</h1>
@@ -20,28 +27,24 @@ const Navigation = () => {
       >
         <span
           className={cn(styles.hamburger, {
-            [`${styles.hamburger}-active`]: isOpen,
+            [styles.active]: isOpen,
           })}
         ></span>
       </button>
       <div
         className={cn(styles.menuList, {
-          [`${styles.menuList}-active`]: isOpen,
+          [styles.active]: isOpen,
         })}
       >
         <ul>
-          <NavigationItem closeNavbar={closeNavbar} link="/">
-            Strona główna
-          </NavigationItem>
-          <NavigationItem closeNavbar={closeNavbar} link="/about">
-            O nas
-          </NavigationItem>
-          <NavigationItem closeNavbar={closeNavbar} link="/offer">
-            Oferta
-          </NavigationItem>
-          <NavigationItem closeNavbar={closeNavbar} link="/offer">
-            Kontakt
-          </NavigationItem>
+          {navigationItems.map(({ path, text }) => (
+            <NavigationItem
+              path={path}
+              text={text}
+              key={text}
+              closeNavbar={closeNavbar}
+            />
+          ))}
         </ul>
       </div>
     </nav>

@@ -1,5 +1,6 @@
 @import '/styles/variables.scss';
 
 .layout {
-  padding-top: $nav-height;
+  padding: $MD-spacing;
+  padding-top: calc($nav-height + $MD-spacing);
 }

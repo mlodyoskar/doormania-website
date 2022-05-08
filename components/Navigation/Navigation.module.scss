@@ -1,5 +1,7 @@
 @import '@/styles/variables.scss';
 
+$hamburger-size: $S-spacing;
+
 .navigation {
   position: fixed;
   top: 0;
@@ -7,7 +9,7 @@
   right: 0;
   width: 100%;
   height: $nav-height;
-  padding: 1rem 2rem;
+  padding: $MD-spacing;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,58 +22,47 @@
   align-items: center;
   justify-items: center;
   cursor: pointer;
-  width: 3.2rem;
-  height: 3rem;
+  width: $LG-spacing;
+  height: $XL-spacing;
   background-color: transparent;
   border: none;
+  z-index: $z-index001;
 }
 
 .hamburger {
   display: inline-block;
-  z-index: 100;
-  height: 0.2rem;
+  height: $XXS-spacing;
   width: 100%;
   background-color: $white;
   transform: translateY(-50%);
-  transition: background-color 0.2s 0.2s ease-in-out;
+  transition: background-color $transition-secondary;
   border-radius: 1em;
   &::before,
   &::after {
     content: '';
     position: absolute;
     display: block;
-    height: 0.2em;
+    height: $XXS-spacing;
     width: 100%;
     border-radius: 1em;
     background-color: $white;
-    transition: transform 0.2s 0.2s ease-in-out;
+    transition: transform $transition-secondary;
   }
   &::before {
-    top: 10px;
+    top: $hamburger-size;
   }
   &::after {
-    top: -10px;
+    top: -$hamburger-size;
   }
-  &-active {
+  &.active {
     background-color: transparent;
 
     &::before {
-      transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-$hamburger-size) rotate(-45deg);
     }
     &::after {
-      transform: translateY(10px) rotate(45deg);
+      transform: translateY($hamburger-size) rotate(45deg);
     }
-  }
-}
-
-.hamburger-active {
-  background-color: transparent;
-
-  &::before {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-  &::after {
-    transform: translateY(10px) rotate(45deg);
   }
 }
 
@@ -80,7 +71,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -89,7 +80,6 @@
 
   width: 100%;
   height: 100vh;
-  // transform: translateX(-200%);
   transition: opacity 0.1s 0s ease-in-out;
   & p {
     padding: 0 2em;
@@ -100,8 +90,7 @@
     padding: 0;
     margin: 0;
   }
-  &-active {
-    transform: translateX(0);
+  &.active {
     opacity: 1;
   }
 }
