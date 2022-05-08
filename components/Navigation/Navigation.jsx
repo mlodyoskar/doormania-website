@@ -3,6 +3,7 @@ import styles from './Navigation.module.scss'
 import Link from 'next/link'
 import cn from 'classnames'
 import { NavigationItem } from './NavigationItem/NavigationItem'
+import Logo from '../Logo/Logo'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,7 +19,11 @@ const Navigation = () => {
 
   return (
     <nav className={styles.navigation}>
-      <h1>Doormania</h1>
+      <Link href="/">
+        <a>
+          <Logo />
+        </a>
+      </Link>
       <button
         className={styles.hamburgerButton}
         aria-controls="navigation"

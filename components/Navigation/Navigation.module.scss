@@ -77,10 +77,10 @@ $hamburger-size: $S-spacing;
   left: 0;
   padding-bottom: 1em;
   background: $primary001;
-
   width: 100%;
   height: 100vh;
   transition: opacity 0.1s 0s ease-in-out;
+  transform: translateX(-200%);
   & p {
     padding: 0 2em;
     color: $white;
@@ -92,5 +92,6 @@ $hamburger-size: $S-spacing;
   }
   &.active {
     opacity: 1;
+    transform: translateX(0);
   }
 }
