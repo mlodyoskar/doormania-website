@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import styles from './Navigation.module.scss'
 import Link from 'next/link'
+import Logo from '../Logo/Logo'
 import cn from 'classnames'
 import { NavigationItem } from './NavigationItem/NavigationItem'
-import Logo from '../Logo/Logo'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +14,7 @@ const Navigation = () => {
     { path: '/', text: 'Strona główna' },
     { path: '/oferta', text: 'Oferta' },
     { path: '/o-nas', text: 'O nas' },
-    { path: 'kontakt', text: 'Kontakt' },
+    { path: '/kontakt', text: 'Kontakt' },
   ]
 
   return (

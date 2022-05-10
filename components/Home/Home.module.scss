@@ -1,0 +1,69 @@
+@import '@/styles/variables.scss';
+
+.contaier {
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-size: calc($LG-spacing * 0.9);
+  font-weight: $regular;
+  line-height: 3.7rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $primary001;
+  max-width: fit-content;
+  border: none;
+  color: $white;
+  padding: $S-spacing;
+  margin-top: $MD-spacing;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: $extrabold;
+}
+
+.underline {
+  border-bottom: 3px solid $primary001;
+}
+.offerHeading {
+  color: $black;
+  text-align: center;
+  margin: $LG-spacing auto;
+  width: fit-content;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+//desktop
+// .offerCard {
+//   display: grid;
+//   grid-template-columns: 2;
+//   grid-template-rows: 2;
+// }
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $primary001;
+  border-radius: 5px;
+  padding: $S-spacing $MD-spacing;
+  box-shadow: 0 6px $primary001;
+}
+
+.offerCardHeading {
+  color: $primary001;
+  font-size: calc($MD-spacing * 0.8);
+  font-weight: $semibold;
+  text-transform: uppercase;
+}

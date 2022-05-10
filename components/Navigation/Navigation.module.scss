@@ -36,7 +36,7 @@ $hamburger-size: $S-spacing;
   background-color: $white;
   transform: translateY(-50%);
   transition: background-color $transition-secondary;
-  border-radius: 1em;
+  border-radius: $XS-spacing;
   &::before,
   &::after {
     content: '';

@@ -1,12 +1,11 @@
 import { NextSeo } from 'next-seo'
-import Head from 'next/head'
 import Image from 'next/image'
-import Home from './../components/Home/Home'
+import Offer from './../components/Offer/Offer'
 
-export default function HomePage() {
-  const title = 'Doormania.pl'
+export default function OfferPage() {
+  const title = 'Doormania.pl | Oferta'
   const description = 'Kupienie idealnych drzwi nigdy nie było tak proste'
-  const url = 'https://doormania.pl'
+  const url = 'https://doormania.pl/oferta'
 
   return (
     <>
@@ -20,7 +19,7 @@ export default function HomePage() {
           description,
         }}
       />
-      <Home />
+      <Offer />
     </>
   )
 }
