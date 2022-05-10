@@ -1,9 +1,29 @@
 import { NextSeo } from 'next-seo'
-import Head from 'next/head'
-import Image from 'next/image'
 import Home from './../components/Home/Home'
+import { request } from '../lib/datocms'
 
-export default function HomePage() {
+const HOMEPAGE_QUERY = `query {
+  allHomepages {
+    id
+    title
+    image {
+      url
+    }
+  }
+}
+`
+
+export async function getStaticProps() {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+  })
+
+  return {
+    props: { data },
+  }
+}
+
+export default function HomePage({ data }) {
   const title = 'Doormania.pl'
   const description = 'Kupienie idealnych drzwi nigdy nie było tak proste'
   const url = 'https://doormania.pl'
@@ -20,7 +40,7 @@ export default function HomePage() {
           description,
         }}
       />
-      <Home />
+      <Home data={data} />
     </>
   )
 }

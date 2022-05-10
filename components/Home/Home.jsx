@@ -5,17 +5,8 @@ import styles from './Home.module.scss'
 import cn from 'classnames'
 import pp from './../../public/static/images/produkt_polski.png'
 
-export async function getStaticProps() {
-  const res = await fetch('https://www.balldontlie.io/api/v1/players')
-  const players = await res.json()
-  console.log(players)
-
-  return {
-    props: { players }, // will be passed to the page component as props
-  }
-}
-
-const Home = ({ players }) => {
+const Home = ({ data: { allHomepages } }) => {
+  console.log(allHomepages)
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
@@ -30,13 +21,19 @@ const Home = ({ players }) => {
           Nasza oferta
         </h2>
         <div className={styles.offer}>
-          <div className={styles.offerCard}>
-            <p className={styles.offerCardHeading}>Drzwi wewnętrzne</p>
-            <Image src={pp} className={styles.offerCardImage} />
-            <StyledLink variant="secondary" path="/oferta">
-              Sprawdź
-            </StyledLink>
-          </div>
+          {allHomepages.map(({ id, title, image }) => (
+            <div key={id} className={styles.offerCard}>
+              <p className={styles.offerCardHeading}>{title}</p>
+              {/* <Image
+                src={image.url}
+                className={styles.offerCardImage}
+                layout="fill"
+              /> */}
+              <StyledLink variant="secondary" path="/oferta">
+                Sprawdź
+              </StyledLink>
+            </div>
+          ))}
         </div>
       </section>
     </div>
