@@ -6,13 +6,13 @@ import cn from 'classnames'
 import pp from './../../public/static/images/produkt_polski.png'
 
 const Home = ({ data: { allHomepages } }) => {
-  console.log(allHomepages)
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
         <h1 className={styles.header}>
-          Kupienie <span className={styles.underline}>idealnych</span> drzwi
-          nigdy nie było prostsze!
+          <span>Kupienie</span>{' '}
+          <span className={styles.underline}>idealnych</span> drzwi nigdy nie
+          było prostsze!
         </h1>
         <StyledLink path="/oferta">Sprawdź ofertę</StyledLink>
       </div>

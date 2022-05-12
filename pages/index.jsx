@@ -25,7 +25,7 @@ export async function getStaticProps() {
 
 export default function HomePage({ data }) {
   const title = 'Doormania.pl'
-  const description = 'Kupienie idealnych drzwi nigdy nie było tak proste'
+  const description = 'Kupienie idealnych drzwi nigdy nie było tak proste!'
   const url = 'https://doormania.pl'
 
   return (
