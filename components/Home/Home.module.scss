@@ -5,6 +5,7 @@
 .hero {
   display: flex;
   flex-direction: column;
+  margin-bottom: $LG-spacing;
 }
 
 .header {
@@ -32,12 +33,6 @@
 .underline {
   border-bottom: 3px solid $primary001;
 }
-.offerHeading {
-  color: $black;
-  text-align: center;
-  margin: $MD-spacing auto;
-  width: fit-content;
-}
 
 .offer {
   display: flex;
@@ -62,6 +57,7 @@
   padding: $S-spacing $MD-spacing;
   box-shadow: 0 6px $primary001;
   margin: $SM-spacing 0;
+  background-color: $white;
 }
 
 .offerCardHeading {
@@ -70,4 +66,10 @@
   font-weight: $semibold;
   text-transform: uppercase;
   text-align: center;
+}
+.offerCardImage {
+  position: relative;
+  width: 150px;
+  height: 230px;
+  margin: $S-spacing 0;
 }

@@ -17,18 +17,14 @@ const Home = ({ data: { allHomepages } }) => {
         <StyledLink path="/oferta">Sprawdź ofertę</StyledLink>
       </div>
       <section>
-        <h2 className={cn(styles.offerHeading, styles.underline)}>
-          Nasza oferta
-        </h2>
         <div className={styles.offer}>
           {allHomepages.map(({ id, title, image }) => (
             <div key={id} className={styles.offerCard}>
               <p className={styles.offerCardHeading}>{title}</p>
-              {/* <Image
-                src={image.url}
-                className={styles.offerCardImage}
-                layout="fill"
-              /> */}
+              <div className={styles.offerCardImage}>
+                <Image src={image.url} layout="fill" />
+              </div>
+
               <StyledLink variant="secondary" path="/oferta">
                 Sprawdź
               </StyledLink>
