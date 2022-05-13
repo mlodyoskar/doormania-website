@@ -3,14 +3,12 @@ import Contact from './../components/Contact/Contact'
 import { request } from '../lib/datocms'
 
 const CONTACTPAGE_QUERY = `query {
-  allContactpages {
+  allContactpageitems {
     id
-    firstParagraph
-    secondParagraph
-    firstImage {
-      url
-    }
-    secondImage {
+    title
+    firstitem
+    seconditem
+    icon{
       url
     }
   }
@@ -27,7 +25,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function ContactPage({ data: { allContactpages } }) {
+export default function ContactPage({ data: { allContactpageitems } }) {
   const title = 'Doormania.pl | Kontakt'
   const description = 'Skontaktuj się z nami!'
   const url = 'https://doormania.pl/kontakt'
@@ -44,7 +42,7 @@ export default function ContactPage({ data: { allContactpages } }) {
           description,
         }}
       />
-      <Contact contactPageData={allContactpages} />
+      <Contact contactPageData={allContactpageitems} />
     </>
   )
 }

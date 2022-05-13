@@ -8,6 +8,16 @@ $black: #282828;
 $white: #ffffff;
 
 //font sizes
+$text-base-size: 1em;
+$text-scale-ratio: 1.2;
+
+$text-xs: calc(1em / (($text-scale-ratio) * ($text-scale-ratio)));
+$text-sm: calc(1em / ($text-scale-ratio));
+$text-md: calc(1em * ($text-scale-ratio));
+$text-lg: calc(1em * ($text-scale-ratio) * ($text-scale-ratio));
+$text-xl: calc(1em * ($text-scale-ratio) * ($text-scale-ratio) * ($text-scale-ratio));
+$text-xxl: calc(1em * ($text-scale-ratio) * ($text-scale-ratio) * ($text-scale-ratio) * ($text-scale-ratio));
+$text-xxxl: calc(1em * ($text-scale-ratio) * ($text-scale-ratio) * ($text-scale-ratio) * ($text-scale-ratio) * ($text-scale-ratio));
 
 //font wegights
 $regular: 400;

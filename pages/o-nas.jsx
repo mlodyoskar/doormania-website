@@ -2,11 +2,15 @@ import { NextSeo } from 'next-seo'
 import About from './../components/About/About'
 import { request } from '../lib/datocms'
 
-const HOMEPAGE_QUERY = `query {
-  allHomepages {
+const ABOUTPAGE_QUERY = `query {
+  aboutpage {
     id
-    title
-    image {
+    firstParagraph
+    secondParagraph
+    firstImage {
+      url
+    }
+    secondImage {
       url
     }
   }
@@ -15,7 +19,7 @@ const HOMEPAGE_QUERY = `query {
 
 export async function getStaticProps() {
   const data = await request({
-    query: HOMEPAGE_QUERY,
+    query: ABOUTPAGE_QUERY,
   })
 
   return {
@@ -23,11 +27,12 @@ export async function getStaticProps() {
   }
 }
 
-export default function AboutPage() {
+export default function AboutPage({ data }) {
   const title = 'Doormania.pl | O nas'
   const description = 'Skontaktuj się z nami!'
   const url = 'https://doormania.pl/o-nas'
 
+  const aboutPageData = data.aboutpage
   return (
     <>
       <NextSeo
@@ -40,7 +45,7 @@ export default function AboutPage() {
           description,
         }}
       />
-      <About />
+      <About aboutPageData={aboutPageData} />
     </>
   )
 }

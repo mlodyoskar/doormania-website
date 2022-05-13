@@ -17,6 +17,7 @@
   text-align: center;
   width: fit-content;
   margin-bottom: $S-spacing;
+  font-size: $text-xl;
 }
 
 .content {
@@ -27,4 +28,25 @@
 .text {
   text-align: justify;
   margin: $S-spacing 0;
+}
+
+.infoCard {
+  margin: $LG-spacing 0;
+  h2 {
+    color: $primary001;
+    font-size: $text-lg;
+  }
+  p {
+    color: $black;
+  }
+}
+.mapContainer {
+  display: none;
+  position: relative;
+  width: 100%;
+  box-shadow: 0px 0px 8px #941845;
+
+  & iframe {
+    border: 0;
+  }
 }

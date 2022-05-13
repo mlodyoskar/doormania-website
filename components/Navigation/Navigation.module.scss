@@ -1,6 +1,6 @@
 @import '@/styles/variables.scss';
 
-$hamburger-size: $S-spacing;
+$hamburger-size: 12px;
 
 .navigation {
   position: fixed;
@@ -32,8 +32,8 @@ $hamburger-size: $S-spacing;
 
 .hamburger {
   display: inline-block;
-  height: $XXS-spacing;
-  width: 100%;
+  height: calc($XXS-spacing * 0.8);
+  width: 90%;
   background-color: $white;
   transform: translateY(-50%);
   transition: background-color $transition-secondary;
@@ -43,7 +43,7 @@ $hamburger-size: $S-spacing;
     content: '';
     position: absolute;
     display: block;
-    height: $XXS-spacing;
+    height: calc($XXS-spacing * 0.8);
     width: 100%;
     border-radius: 1em;
     background-color: $white;
