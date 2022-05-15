@@ -27,7 +27,11 @@ const Offer = ({ allDoors }) => {
             })}
           >
             {categoires.map(({ name, path }) => (
-              <Link href={`${path}`}>
+              <Link
+                key={name}
+                onClick={toggleCategoiresVisibility}
+                href={`${path}`}
+              >
                 <a>{name}</a>
               </Link>
             ))}
@@ -38,7 +42,7 @@ const Offer = ({ allDoors }) => {
             <div key={id} className={styles.doorCard}>
               <Image width={150} height={200} src={image.url} />
               <p>{name}</p>
-              <StyledLink variant="secondary" path={`oferta/${name}`}>
+              <StyledLink variant="secondary" path={`produkt/${id}`}>
                 Sprawdź
               </StyledLink>
             </div>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react": "^18.0.9",
     "classnames": "^2.3.1",
     "dotenv": "^16.0.1",
     "graphql-request": "^4.2.0",
