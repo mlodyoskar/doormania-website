@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 export default function ProductPage({ data: { allDoors } }) {
   const { id, name } = allDoors[0]
 
-  const title = `Doormania.pl | ${name}`
+  const title = `Doormania.pl | Drzwi ${name}`
   const description = 'Kupienie idealnych drzwi nigdy nie było tak proste'
   const url = `https://doormania.pl/produkt/${id}`
 
