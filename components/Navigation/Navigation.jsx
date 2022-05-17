@@ -5,17 +5,17 @@ import Logo from '../Logo/Logo'
 import cn from 'classnames'
 import { NavigationItem } from './NavigationItem/NavigationItem'
 
+const navigationItems = [
+  { path: '/', text: 'Strona główna' },
+  { path: '/oferta', text: 'Oferta' },
+  { path: '/o-nas', text: 'O nas' },
+  { path: '/kontakt', text: 'Kontakt' },
+]
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const closeNavbar = () => setIsOpen(false)
-
-  const navigationItems = [
-    { path: '/', text: 'Strona główna' },
-    { path: '/oferta', text: 'Oferta' },
-    { path: '/o-nas', text: 'O nas' },
-    { path: '/kontakt', text: 'Kontakt' },
-  ]
 
   return (
     <nav className={styles.navigation}>

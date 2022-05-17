@@ -1,6 +1,6 @@
 @import '@/styles/variables.scss';
 
-$hamburger-size: 12px;
+$hamburger-size: 10px;
 
 .navigation {
   position: fixed;
@@ -23,7 +23,7 @@ $hamburger-size: 12px;
   align-items: center;
   justify-items: center;
   cursor: pointer;
-  width: 60px;
+  min-width: 60px;
   height: $XL-spacing;
   background-color: transparent;
   border: none;
@@ -32,7 +32,7 @@ $hamburger-size: 12px;
 
 .hamburger {
   display: inline-block;
-  height: calc($XXS-spacing * 0.8);
+  height: calc($XXS-spacing * 0.6);
   width: 90%;
   background-color: $white;
   transform: translateY(-50%);
@@ -43,7 +43,7 @@ $hamburger-size: 12px;
     content: '';
     position: absolute;
     display: block;
-    height: calc($XXS-spacing * 0.8);
+    height: calc($XXS-spacing * 0.6);
     width: 100%;
     border-radius: 1em;
     background-color: $white;
@@ -80,8 +80,8 @@ $hamburger-size: 12px;
   background: $primary001;
   width: 100%;
   height: 100vh;
-  transition: opacity 0.1s 0s ease-in-out;
-  transform: translateX(-200%);
+  transition: opacity $transition-secondary, transform 0.01s ease 0.4s;
+  transform: scale(0);
   & p {
     padding: 0 2em;
     color: $white;
@@ -93,6 +93,7 @@ $hamburger-size: 12px;
   }
   &.active {
     opacity: 1;
-    transform: translateX(0);
+    transition: opacity 0.2s ease-in-out;
+    transform: scale(1);
   }
 }
