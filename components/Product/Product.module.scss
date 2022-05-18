@@ -29,3 +29,26 @@
   background-color: $grey;
   margin: $SM-spacing 0;
 }
+
+.availability {
+  font-weight: $regular;
+  font-size: $text-md;
+}
+.versionContainer {
+  margin: $SM-spacing 0;
+}
+
+.version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: $SM-spacing;
+
+  & p {
+    color: $primary001;
+    font-size: $text-md;
+    font-weight: $semibold;
+    text-transform: uppercase;
+  }
+}
