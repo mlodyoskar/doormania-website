@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import Home from './../components/Home/Home'
 import { request } from '../lib/datocms'
+import Layout from '@/components/Layout/Layout'
 
 const HOMEPAGE_QUERY = `query {
   allHomepages {
@@ -40,7 +41,9 @@ export default function HomePage({ data }) {
           description,
         }}
       />
-      <Home data={data} />
+      <Layout>
+        <Home data={data} />
+      </Layout>
     </>
   )
 }

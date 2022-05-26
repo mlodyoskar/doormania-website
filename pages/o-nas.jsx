@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import About from './../components/About/About'
 import { request } from '../lib/datocms'
+import Layout from '@/components/Layout/Layout'
 
 const ABOUTPAGE_QUERY = `query {
   aboutpage {
@@ -45,7 +46,9 @@ export default function AboutPage({ data }) {
           description,
         }}
       />
-      <About aboutPageData={aboutPageData} />
+      <Layout>
+        <About aboutPageData={aboutPageData} />
+      </Layout>
     </>
   )
 }

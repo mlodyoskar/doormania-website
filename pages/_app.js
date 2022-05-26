@@ -1,15 +1,33 @@
-import Layout from '@/components/Layout/Layout'
 import '@/styles/globals.scss'
-import Navigation from '@/components/Navigation/Navigation'
+import Layout from '@/components/Layout/Layout'
+import { request } from '../lib/datocms'
 
+const FOOTER_QUERY = `query {
+  allHomepages {
+    id
+    title
+    image {
+      url
+    }
+  }
+}
+`
 
-function MyApp({ Component, pageProps }) {
+export async function getStaticProps() {
+  const data = await request({
+    query: FOOTER_QUERY,
+  })
+
+  return {
+    props: { data },
+  }
+}
+
+function MyApp({ Component, pageProps, data }) {
+  console.log(data)
   return (
     <>
-      <Navigation />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </>
   )
 }

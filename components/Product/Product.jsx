@@ -14,7 +14,9 @@ const Product = ({
       <p className={styles.doorTitle}>{name}</p>
       <p className={styles.doorDescription}>{description}</p>
       <span className={styles.horizontalLine}></span>
-      <p className={styles.availability}>Dostępne wersje: </p>
+      {version.length != 0 && (
+        <p className={styles.availability}>Dostępne wersje: </p>
+      )}
       <div className={styles.versionContainer}>
         {version.map(({ name, thickness, rw, ud }) => (
           <div className={styles.version}>

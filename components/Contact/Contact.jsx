@@ -7,7 +7,7 @@ const Contact = ({ contactPageData }) => {
       <h1 className={styles.pageHeader}>Kontakt</h1>
       <div className={styles.content}>
         <div className={styles.column}>
-          {contactPageData.map(({ title, firstitem, seconditem, icon }, i) => (
+          {contactPageData.map(({ title, firstitem, seconditem }, i) => (
             <div key={title} className={styles.infoCard}>
               <h2>{title}</h2>
               <p>{firstitem}</p>

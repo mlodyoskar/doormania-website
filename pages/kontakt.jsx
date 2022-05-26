@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import Contact from './../components/Contact/Contact'
 import { request } from '../lib/datocms'
+import Layout from '@/components/Layout/Layout'
 
 const CONTACTPAGE_QUERY = `query {
   allContactpageitems {
@@ -42,7 +43,9 @@ export default function ContactPage({ data: { allContactpageitems } }) {
           description,
         }}
       />
-      <Contact contactPageData={allContactpageitems} />
+      <Layout>
+        <Contact contactPageData={allContactpageitems} />
+      </Layout>
     </>
   )
 }

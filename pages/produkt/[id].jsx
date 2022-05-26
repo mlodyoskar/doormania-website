@@ -3,18 +3,7 @@ import Product from '@/components/Product/Product'
 import { request } from '../../lib/datocms'
 import { useRouter } from 'next/router'
 import { getDoorsPaths, getDoorById } from '@/lib/doors'
-
-const PRODUCT_QUERY = `query {
-   allDoors {
-    id
-    image {
-      url
-    }
-    category
-    name
-  }
-}
-`
+import Layout from '@/components/Layout/Layout'
 
 export async function getStaticProps({ params }) {
   const data = await getDoorById(params.id)
@@ -51,7 +40,9 @@ export default function ProductPage({ data: { allDoors } }) {
           description,
         }}
       />
-      <Product product={allDoors[0]} />
+      <Layout>
+        <Product product={allDoors[0]} />
+      </Layout>
     </>
   )
 }

@@ -1,30 +1,20 @@
 import { NextSeo } from 'next-seo'
 import Offer from '@/components/Offer/Offer'
 import { request } from '../../lib/datocms'
-
-const OFFERPAGE_QUERY = `query {
-   allDoors {
-    id
-    image {
-      url
-    }
-    category
-    name
-  }
-}
-`
+import Layout from '@/components/Layout/Layout'
+import { getAllDoors } from '@/lib/offer'
+import { getFooterData } from '@/lib/footer'
 
 export async function getStaticProps() {
-  const data = await request({
-    query: OFFERPAGE_QUERY,
-  })
+  const offerData = await getAllDoors()
+  const footerData = await getFooterData()
 
   return {
-    props: { data },
+    props: { offerData, footerData },
   }
 }
 
-export default function OfferPage({ data: { allDoors } }) {
+export default function OfferPage({ offerData: { allDoors }, footerData }) {
   const title = 'Doormania.pl | Oferta'
   const description = 'Kupienie idealnych drzwi nigdy nie było tak proste'
   const url = 'https://doormania.pl/oferta'
@@ -41,7 +31,9 @@ export default function OfferPage({ data: { allDoors } }) {
           description,
         }}
       />
-      <Offer allDoors={allDoors} />
+      <Layout data={footerData}>
+        <Offer allDoors={allDoors} />
+      </Layout>
     </>
   )
 }
