@@ -31,15 +31,19 @@
 }
 
 .infoCard {
-  margin: $LG-spacing 0;
+  display: flex;
+  margin: $MD-spacing 0;
+  color: $primary001;
   h2 {
-    color: $primary001;
-    font-size: $text-lg;
+    font-size: $text-md;
+    text-transform: uppercase;
   }
-  p {
-    color: $black;
+
+  a {
+    color: $primary001;
   }
 }
+
 .mapContainer {
   display: none;
   position: relative;
@@ -49,4 +53,16 @@
   & iframe {
     border: 0;
   }
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 15%;
+  margin-right: $SM-spacing;
+}
+.icon {
+  width: 100%;
+  height: 100%;
 }

@@ -24,7 +24,6 @@ export async function getStaticProps() {
 }
 
 function MyApp({ Component, pageProps, data }) {
-  console.log(data)
   return (
     <>
       <Component {...pageProps} />

@@ -6,8 +6,17 @@ import {
   AiOutlineEnvironment,
 } from 'react-icons/ai'
 
-const Footer = ({ data }) => {
-  console.log(data)
+const Footer = ({ data: { footer } }) => {
+  const {
+    email,
+    emailSec,
+    phone,
+    phoneSec,
+    street,
+    zipcodeCity,
+    satSunWorkHours,
+    monFriWorkHours,
+  } = footer
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
@@ -33,10 +42,10 @@ const Footer = ({ data }) => {
             <div>
               <h2>Telefon</h2>
               <p>
-                tel: <a href={`tel:${+48}`}>BLABLA</a>
+                tel: <a href={`tel:${phone}`}>{phone}</a>
               </p>
               <p>
-                e-mail: <a href={`mailto:`}>doormania@gmail.com</a>
+                e-mail: <a href={`mailto:${email}`}>{email}</a>
               </p>
             </div>
           </div>
@@ -46,8 +55,8 @@ const Footer = ({ data }) => {
             </div>
             <div>
               <h2>Siedziba firmy</h2>
-              <p>siedzibka</p>
-              <p>zip-code i miasto</p>
+              <p>{street}</p>
+              <p>{zipcodeCity}</p>
             </div>
           </div>
           <div className={styles.infoCard}>
@@ -56,8 +65,8 @@ const Footer = ({ data }) => {
             </div>
             <div>
               <h2>Godziny pracy</h2>
-              <p>poniedziałek-piątek: tu godziny pracy</p>
-              <p>sobota-niedziela: tu te godzinki</p>
+              <p>poniedziałek-piątek: {monFriWorkHours}</p>
+              <p>sobota-niedziela: {satSunWorkHours}</p>
             </div>
           </div>
         </div>

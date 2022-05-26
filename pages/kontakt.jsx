@@ -2,31 +2,19 @@ import { NextSeo } from 'next-seo'
 import Contact from './../components/Contact/Contact'
 import { request } from '../lib/datocms'
 import Layout from '@/components/Layout/Layout'
-
-const CONTACTPAGE_QUERY = `query {
-  allContactpageitems {
-    id
-    title
-    firstitem
-    seconditem
-    icon{
-      url
-    }
-  }
-}
-`
+import { getContactData } from '@/lib/contact'
+import { getFooterData } from '@/lib/footer'
 
 export async function getStaticProps() {
-  const data = await request({
-    query: CONTACTPAGE_QUERY,
-  })
+  const contactData = await getContactData()
+  const footerData = await getFooterData(0)
 
   return {
-    props: { data },
+    props: { footerData },
   }
 }
 
-export default function ContactPage({ data: { allContactpageitems } }) {
+export default function ContactPage({ footerData }) {
   const title = 'Doormania.pl | Kontakt'
   const description = 'Skontaktuj się z nami!'
   const url = 'https://doormania.pl/kontakt'
@@ -43,8 +31,8 @@ export default function ContactPage({ data: { allContactpageitems } }) {
           description,
         }}
       />
-      <Layout>
-        <Contact contactPageData={allContactpageitems} />
+      <Layout data={footerData}>
+        <Contact contactPageData={footerData} />
       </Layout>
     </>
   )

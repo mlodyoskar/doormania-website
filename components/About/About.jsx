@@ -1,13 +1,8 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import { StyledLink } from '../StyledLink/StyledLink'
 import styles from './About.module.scss'
-import cn from 'classnames'
-import pp from './../../public/static/images/produkt_polski.png'
 
-const About = ({ aboutPageData }) => {
-  const { firstParagraph, secondParagraph, firstImage, secondImage } =
-    aboutPageData
+const About = ({ aboutData: { aboutpage } }) => {
+  const { firstParagraph, secondParagraph, firstImage, secondImage } = aboutpage
   return (
     <section className={styles.container}>
       <h1 className={styles.pageHeader}>O nas</h1>

@@ -18,7 +18,6 @@ export default function OfferPage({ offerData: { allDoors }, footerData }) {
   const title = 'Doormania.pl | Oferta'
   const description = 'Kupienie idealnych drzwi nigdy nie było tak proste'
   const url = 'https://doormania.pl/oferta'
-
   return (
     <>
       <NextSeo

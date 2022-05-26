@@ -1,19 +1,60 @@
-import Image from 'next/image'
 import styles from './Contact.module.scss'
+import {
+  AiOutlinePhone,
+  AiOutlineClockCircle,
+  AiOutlineEnvironment,
+} from 'react-icons/ai'
 
-const Contact = ({ contactPageData }) => {
+const Contact = ({ contactPageData: { footer } }) => {
+  const {
+    email,
+    emailSec,
+    phone,
+    phoneSec,
+    street,
+    zipcodeCity,
+    satSunWorkHours,
+    monFriWorkHours,
+  } = footer
   return (
     <section className={styles.container}>
       <h1 className={styles.pageHeader}>Kontakt</h1>
       <div className={styles.content}>
         <div className={styles.column}>
-          {contactPageData.map(({ title, firstitem, seconditem }, i) => (
-            <div key={title} className={styles.infoCard}>
-              <h2>{title}</h2>
-              <p>{firstitem}</p>
-              <p>{seconditem}</p>
+          <div className={styles.infoCard}>
+            <div className={styles.iconContainer}>
+              <AiOutlinePhone className={styles.icon} />
             </div>
-          ))}
+            <div>
+              <h2>Telefon</h2>
+              <p>
+                tel: <a href={`tel:${phone}`}>{phone}</a>
+              </p>
+              <p>
+                e-mail: <a href={`mailto:${email}`}>{email}</a>
+              </p>
+            </div>
+          </div>
+          <div className={styles.infoCard}>
+            <div className={styles.iconContainer}>
+              <AiOutlineEnvironment className={styles.icon} />
+            </div>
+            <div>
+              <h2>Siedziba firmy</h2>
+              <p>{street}</p>
+              <p>{zipcodeCity}</p>
+            </div>
+          </div>
+          <div className={styles.infoCard}>
+            <div className={styles.iconContainer}>
+              <AiOutlineClockCircle className={styles.icon} />
+            </div>
+            <div>
+              <h2>Godziny pracy</h2>
+              <p>poniedziałek-piątek: {monFriWorkHours}</p>
+              <p>sobota-niedziela: {satSunWorkHours}</p>
+            </div>
+          </div>
         </div>
         <div className={styles.column}>
           <div className={styles.mapContainer}>

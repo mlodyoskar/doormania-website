@@ -5,7 +5,6 @@ import cn from 'classnames'
 const Product = ({
   product: { name, description, category, image, version },
 }) => {
-  console.log(version)
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>

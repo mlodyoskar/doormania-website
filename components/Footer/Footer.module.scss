@@ -15,15 +15,15 @@
   display: flex;
   margin: $MD-spacing 0;
   h2 {
-    font-size: $text-lg;
+    font-size: $text-md;
     text-transform: uppercase;
-    margin-bottom: $XS-spacing;
   }
 
   a {
     color: $white;
   }
 }
+
 .iconContainer {
   display: flex;
   align-items: center;

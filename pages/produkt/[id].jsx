@@ -4,12 +4,14 @@ import { request } from '../../lib/datocms'
 import { useRouter } from 'next/router'
 import { getDoorsPaths, getDoorById } from '@/lib/doors'
 import Layout from '@/components/Layout/Layout'
+import { getFooterData } from '@/lib/footer'
 
 export async function getStaticProps({ params }) {
   const data = await getDoorById(params.id)
+  const footerData = await getFooterData()
 
   return {
-    props: { data },
+    props: { data, footerData },
   }
 }
 export async function getStaticPaths() {
@@ -21,7 +23,7 @@ export async function getStaticPaths() {
   }
 }
 
-export default function ProductPage({ data: { allDoors } }) {
+export default function ProductPage({ data: { allDoors }, footerData }) {
   const { id, name } = allDoors[0]
 
   const title = `Doormania.pl | Drzwi ${name}`
@@ -40,7 +42,7 @@ export default function ProductPage({ data: { allDoors } }) {
           description,
         }}
       />
-      <Layout>
+      <Layout data={footerData}>
         <Product product={allDoors[0]} />
       </Layout>
     </>

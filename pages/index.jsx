@@ -2,29 +2,19 @@ import { NextSeo } from 'next-seo'
 import Home from './../components/Home/Home'
 import { request } from '../lib/datocms'
 import Layout from '@/components/Layout/Layout'
-
-const HOMEPAGE_QUERY = `query {
-  allHomepages {
-    id
-    title
-    image {
-      url
-    }
-  }
-}
-`
+import { getHomepageData } from '@/lib/homepage'
+import { getFooterData } from '@/lib/footer'
 
 export async function getStaticProps() {
-  const data = await request({
-    query: HOMEPAGE_QUERY,
-  })
+  const homepageData = await getHomepageData()
+  const footerData = await getFooterData()
 
   return {
-    props: { data },
+    props: { homepageData, footerData },
   }
 }
 
-export default function HomePage({ data }) {
+export default function HomePage({ homepageData, footerData }) {
   const title = 'Doormania.pl'
   const description = 'Kupienie idealnych drzwi nigdy nie było tak proste!'
   const url = 'https://doormania.pl'
@@ -41,8 +31,8 @@ export default function HomePage({ data }) {
           description,
         }}
       />
-      <Layout>
-        <Home data={data} />
+      <Layout data={footerData}>
+        <Home data={homepageData} />
       </Layout>
     </>
   )
