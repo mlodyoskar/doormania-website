@@ -1,0 +1,58 @@
+@import '/styles/variables.scss';
+
+.categoryContainer {
+  margin: $MD-spacing 0;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  background-color: $white;
+
+  .categories {
+    display: none;
+    width: 100%;
+  }
+  .categories.active {
+    display: flex;
+    flex-direction: column;
+    transition: display 0.5s ease-in-out;
+  }
+
+  button {
+    background-color: $primary001;
+    width: 100%;
+    text-align: center;
+    color: $white;
+    font-size: $text-md;
+    font-weight: $semibold;
+    padding: $XS-spacing 0;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+    color: $primary001;
+    padding: $XS-spacing;
+    font-size: $text-md;
+    text-decoration: none;
+    box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+
+    &.active {
+      background-color: $grey;
+      font-weight: $semibold;
+    }
+    &:last-child {
+      box-shadow: none;
+      padding: $S-spacing;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+}

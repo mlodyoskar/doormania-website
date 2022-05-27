@@ -1,9 +1,7 @@
-import { NextSeo } from 'next-seo'
-import Product from '@/components/Product/Product'
-import { request } from '../../lib/datocms'
-import { useRouter } from 'next/router'
-import { getDoorsPaths, getDoorById } from '@/lib/doors'
 import Layout from '@/components/Layout/Layout'
+import Product from '@/components/Product/Product'
+import { NextSeo } from 'next-seo'
+import { getDoorsPaths, getDoorById } from '@/lib/doors'
 import { getFooterData } from '@/lib/footer'
 
 export async function getStaticProps({ params }) {
@@ -14,6 +12,7 @@ export async function getStaticProps({ params }) {
     props: { data, footerData },
   }
 }
+
 export async function getStaticPaths() {
   const paths = await getDoorsPaths()
 

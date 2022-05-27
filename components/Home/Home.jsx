@@ -14,18 +14,18 @@ const Home = ({ data: { allHomepages } }) => {
           <span className={styles.underline}>idealnych</span> drzwi nigdy nie
           było prostsze!
         </h1>
-        <StyledLink path="/oferta">Sprawdź ofertę</StyledLink>
+        <StyledLink path="/oferta/wszystkie">Sprawdź ofertę</StyledLink>
       </div>
       <section>
         <div className={styles.offer}>
-          {allHomepages.map(({ id, title, image }) => (
+          {allHomepages.map(({ id, title, image, category }) => (
             <div key={id} className={styles.offerCard}>
               <p className={styles.offerCardHeading}>{title}</p>
               <div className={styles.offerCardImage}>
                 <Image src={image.url} layout="fill" />
               </div>
 
-              <StyledLink variant="secondary" path="/oferta">
+              <StyledLink variant="secondary" path={`/oferta/${category.slug}`}>
                 Sprawdź
               </StyledLink>
             </div>

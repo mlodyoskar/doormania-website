@@ -1,5 +1,5 @@
 import '@/styles/globals.scss'
-import Layout from '@/components/Layout/Layout'
+import Navigation from '@/components/Navigation/Navigation'
 import { request } from '../lib/datocms'
 
 const FOOTER_QUERY = `query {
@@ -26,6 +26,7 @@ export async function getStaticProps() {
 function MyApp({ Component, pageProps, data }) {
   return (
     <>
+      <Navigation />
       <Component {...pageProps} />
     </>
   )

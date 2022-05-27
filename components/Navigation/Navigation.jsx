@@ -7,7 +7,7 @@ import { NavigationItem } from './NavigationItem/NavigationItem'
 
 const navigationItems = [
   { path: '/', text: 'Strona główna' },
-  { path: '/oferta', text: 'Oferta' },
+  { path: '/oferta/wszystkie', text: 'Oferta' },
   { path: '/o-nas', text: 'O nas' },
   { path: '/kontakt', text: 'Kontakt' },
 ]
