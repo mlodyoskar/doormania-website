@@ -3,4 +3,6 @@
 .layout {
   padding: $MD-spacing;
   padding-top: calc($nav-height + $MD-spacing);
+  max-width: 1400px;
+  margin: auto;
 }

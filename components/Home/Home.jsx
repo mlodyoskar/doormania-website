@@ -9,12 +9,22 @@ const Home = ({ data: { allHomepages } }) => {
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
-        <h1 className={styles.header}>
-          <span>Kupienie</span>{' '}
-          <span className={styles.underline}>idealnych</span> drzwi nigdy nie
-          było prostsze!
-        </h1>
-        <StyledLink path="/oferta/wszystkie">Sprawdź ofertę</StyledLink>
+        <div className={styles.column}>
+          <h1 className={styles.header}>
+            <span>Kupienie</span>{' '}
+            <span className={styles.underline}>idealnych</span> drzwi nigdy nie
+            było prostsze!
+          </h1>
+          <StyledLink path="/oferta/wszystkie">Sprawdź ofertę</StyledLink>
+        </div>
+        <div className={styles.column}>
+          <h1 className={styles.header}>
+            <span>Kupienie</span>{' '}
+            <span className={styles.underline}>idealnych</span> drzwi nigdy nie
+            było prostsze!
+          </h1>
+          <StyledLink path="/oferta/wszystkie">Sprawdź ofertę</StyledLink>
+        </div>
       </div>
       <section>
         <div className={styles.offer}>

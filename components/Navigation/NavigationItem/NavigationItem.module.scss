@@ -2,6 +2,7 @@
 
 .menuListItem {
   display: flex;
+  justify-items: center;
 
   &:hover {
     text-decoration: underline;
@@ -16,5 +17,16 @@
     font-weight: $semibold;
     font-size: 2rem;
     width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 100%;
+    & a {
+      display: flex;
+      align-items: center;
+      font-size: $text-md;
+      padding: $MD-spacing;
+      margin: 0;
+    }
   }
 }

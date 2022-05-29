@@ -16,6 +16,10 @@ $hamburger-size: 10px;
   background-color: $primary001;
   color: $white;
   z-index: $z-index002;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 $LG-spacing;
+  }
 }
 
 .hamburgerButton {
@@ -28,6 +32,10 @@ $hamburger-size: 10px;
   background-color: transparent;
   border: none;
   z-index: $z-index001;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }
 
 .hamburger {
@@ -82,6 +90,7 @@ $hamburger-size: 10px;
   height: 100vh;
   transition: opacity $transition-secondary, transform 0.01s ease 0.4s;
   transform: scale(0);
+
   & p {
     padding: 0 2em;
     color: $white;
@@ -90,10 +99,31 @@ $hamburger-size: 10px;
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   &.active {
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
     transform: scale(1);
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+    height: 100%;
+    padding-bottom: 0;
+    & p {
+      padding: 0;
+    }
+    ul {
+      flex-direction: row;
+      height: 100%;
+    }
   }
 }

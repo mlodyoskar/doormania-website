@@ -14,6 +14,7 @@ const categories = [
 const Category = () => {
   const { query } = useRouter()
   const [categoriesVisiblity, setCategoriesVisiblity] = useState(false)
+
   const toggleCategoriesVisibility = () =>
     setCategoriesVisiblity((prevVal) => !prevVal)
 
