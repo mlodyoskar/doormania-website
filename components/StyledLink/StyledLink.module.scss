@@ -28,4 +28,10 @@
   background: $white;
   color: $primary001;
   border: 1px solid $primary001;
+  transition: background $transition-primary, color $transition-secondary;
+
+  &:hover {
+    background: $primary001;
+    color: $white;
+  }
 }

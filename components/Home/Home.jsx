@@ -26,21 +26,18 @@ const Home = ({ data: { allHomepages } }) => {
           <StyledLink path="/oferta/wszystkie">Sprawdź ofertę</StyledLink>
         </div>
       </div>
-      <section>
-        <div className={styles.offer}>
-          {allHomepages.map(({ id, title, image, category }) => (
-            <div key={id} className={styles.offerCard}>
-              <p className={styles.offerCardHeading}>{title}</p>
-              <div className={styles.offerCardImage}>
-                <Image src={image.url} layout="fill" />
-              </div>
-
-              <StyledLink variant="secondary" path={`/oferta/${category.slug}`}>
-                Sprawdź
-              </StyledLink>
+      <section className={styles.offer}>
+        {allHomepages.map(({ id, title, image, category }) => (
+          <div key={id} className={styles.offerCard}>
+            <p className={styles.offerCardHeading}>{title}</p>
+            <div className={styles.offerCardImage}>
+              <Image src={image.url} layout="fill" />
             </div>
-          ))}
-        </div>
+            <StyledLink variant="secondary" path={`/oferta/${category.slug}`}>
+              Sprawdź
+            </StyledLink>
+          </div>
+        ))}
       </section>
     </div>
   )

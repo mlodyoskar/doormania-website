@@ -38,6 +38,7 @@ $XL-spacing: calc(5.25 * $space-unit);
 // navbar
 $nav-height: 5em;
 
+
 //transitions
 $transition-primary: 0.1s 0.1s ease-in-out;
 $transition-secondary: 0.2s 0.2s ease-in-out;
@@ -47,3 +48,10 @@ $z-index001: 10;
 $z-index002: 20;
 $z-index003: 30;
 $z-index004: 40;
+
+$page-max-width: 1440px;
+
+// breakpoints
+$breakpoint-large: 1024px;
+$breakpoint-medium: 768px;
+$breakpoint-small: 496px;

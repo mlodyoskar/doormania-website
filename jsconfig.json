@@ -6,6 +6,7 @@
       "@/styles/*": ["./styles/*"],
       "@/api/*": ["./api/*"],
       "@/pages/*": ["./pages/*"],
+      "@/hooks/*": ["./hooks/*"],
       "@/lib/*": ["./lib/*"]
     }
   },

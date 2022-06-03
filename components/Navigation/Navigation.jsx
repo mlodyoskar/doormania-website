@@ -18,41 +18,43 @@ const Navigation = () => {
   const closeNavbar = () => setIsOpen(false)
 
   return (
-    <nav className={styles.navigation}>
-      <Link href="/">
-        <a>
-          <Logo />
-        </a>
-      </Link>
-      <button
-        className={styles.hamburgerButton}
-        aria-controls="navigation"
-        aria-expanded={isOpen}
-        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-      >
-        <span
-          className={cn(styles.hamburger, {
+    <div className={styles.container}>
+      <nav className={styles.navigation}>
+        <Link href="/">
+          <a>
+            <Logo />
+          </a>
+        </Link>
+        <button
+          className={styles.hamburgerButton}
+          aria-controls="navigation"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+        >
+          <span
+            className={cn(styles.hamburger, {
+              [styles.active]: isOpen,
+            })}
+          ></span>
+        </button>
+        <div
+          className={cn(styles.menuList, {
             [styles.active]: isOpen,
           })}
-        ></span>
-      </button>
-      <div
-        className={cn(styles.menuList, {
-          [styles.active]: isOpen,
-        })}
-      >
-        <ul>
-          {navigationItems.map(({ path, text }) => (
-            <NavigationItem
-              path={path}
-              text={text}
-              key={text}
-              closeNavbar={closeNavbar}
-            />
-          ))}
-        </ul>
-      </div>
-    </nav>
+        >
+          <ul>
+            {navigationItems.map(({ path, text }) => (
+              <NavigationItem
+                path={path}
+                text={text}
+                key={text}
+                closeNavbar={closeNavbar}
+              />
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </div>
   )
 }
 

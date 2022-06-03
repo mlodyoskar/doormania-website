@@ -24,6 +24,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: $breakpoint-large) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 }
 
 .doorsContainer {
@@ -31,6 +37,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: $breakpoint-large) {
+    width: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $S-spacing;
+  }
 }
 
 .doorCard {
@@ -45,14 +57,35 @@
   box-shadow: 0 6px $primary001;
   margin: $SM-spacing 0;
   background-color: $white;
+  @media screen and (min-width: $breakpoint-large) {
+    width: auto;
+  }
 
   p {
     color: $primary001;
     text-transform: uppercase;
     font-size: $text-xxl;
+    @media screen and (min-width: $breakpoint-large) {
+      font-size: $text-md;
+    }
   }
 
   a {
     padding: $S-spacing $MD-spacing;
+  }
+}
+
+.categoryContainer {
+  width: 90%;
+  margin-top: $XS-spacing;
+  @media screen and (min-width: $breakpoint-large) {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-items: flex-start;
+    margin-top: $SM-spacing;
+    position: sticky;
+    top: 100px;
   }
 }

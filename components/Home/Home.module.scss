@@ -14,6 +14,7 @@
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
+    margin-bottom: $XL-spacing;
   }
 }
 
@@ -24,6 +25,8 @@
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
+    font-size: calc($text-xxxl * 1.8);
+    font-weight: $regular;
   }
 }
 
@@ -52,9 +55,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: $MD-spacing;
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
+    margin-bottom: $XL-spacing;
   }
 }
 
@@ -70,8 +75,11 @@
   box-shadow: 0 6px $primary001;
   background-color: $white;
   margin: $SM-spacing 0;
+
   @media screen and (min-width: 1024px) {
     margin: 0 $S-spacing;
+    align-self: stretch;
+    justify-content: space-between;
   }
 }
 
